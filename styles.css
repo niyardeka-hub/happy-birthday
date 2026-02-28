@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+    color: #333;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    text-align: center;
+    padding-top: 15vh;
+}
+
+h1 {
+    font-size: 4rem;
+    animation: pop 1s ease, glow 2s ease-in-out infinite alternate;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+@keyframes pop {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #fff, 0 0 20px #ff6ec7, 0 0 30px #ff6ec7; }
+    to   { text-shadow: 0 0 20px #fff, 0 0 30px #ff6ec7, 0 0 40px #ff6ec7; }
+}
+
+/* Confetti */
+#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f2e6ff;
+    opacity: 0.8;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10px) rotate(0deg); }
+    100% { transform: translateY(110vh) rotate(360deg); }
+}
+
+/* Balloons */
+#balloons {
+    position: fixed;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.balloon {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50% 50% 50% 50%;
+    opacity: 0.9;
+    animation: rise 6s linear infinite;
+    transform-origin: center bottom;
+}
+
+@keyframes rise {
+    0% { transform: translateY(0) scale(0.8); }
+    100% { transform: translateY(-110vh) scale(1); }
+}
+
+/* Slideshow */
+#slideshow {
+    position: fixed;
+    bottom: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    pointer-events: none;
+}
+
+.slide {
+    opacity: 0;
+    transition: opacity 1s ease;
+    will-change: opacity;
+    animation: float-text 4s ease-in-out infinite;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+@keyframes float-text {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}

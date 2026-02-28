@@ -1,0 +1,1 @@
+Place a "happy-birthday.mp3" file here. The HTML audio tag will play it automatically. You can download a free "Happy Birthday" mp3 from any royalty-free source.
